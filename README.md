@@ -1,4 +1,4 @@
-# SVView
+# Stupid Simple Structural Variant View
 
 A two-step process that can help visualize the coverage near a variant across multiple BAMs.
 
