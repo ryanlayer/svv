@@ -14,8 +14,12 @@ Visualize these coverages with `spark.py`, which takes an exome file, a map from
             -n data/h37_ensemble_exons.togenename.txt \
             -o var_DEL_pindel_18715.png
 
+![var_DEL_pindel_18715.png](test/var_DEL_pindel_18715.png)
+
     $ cat var_UW_VH_5456.txt \
         | ./spark.py \
             -e data/h37_ensemble_exons.bed.gz \
             -n data/h37_ensemble_exons.togenename.txt \
             -o var_UW_VH_5456.png
+
+![var_UW_VH_5456.png](test/var_UW_VH_5456.png)
