@@ -2,7 +2,7 @@
 
 A two-step process that can help visualize the coverage near a variant across multiple BAMs.
 
-    $ bcftools view test/test.vcf.gz | ./sv_depth.py test/test.ped 10000
+    $ bcftools view test/test.vcf.gz | ./sv_depth.py test/test.ped 1000
     
 `sv_depth.py` creates a covrage file for each SV named "var_ID.txt".  In this case it creates `var_DEL_pindel_18715.txt` and `var_UW_VH_5456.txt`.  The parameter to `sv_depth.py` modulates the distance up and down stream of the the SV.
 
