@@ -1,0 +1,9 @@
+family_id	sample_id	paternal_id	maternal_id	sex	phenotype	population	bam
+PR63	HG01311	0	0	1	0	PUR	test/HG01311.bam
+CLM54	HG01464	0	0	1	0	CLM	test/HG01464.bam
+IBS005	HG01513	0	0	2	0	IBS	test/HG01513.bam
+PEL005	HG01577	0	0	1	0	PEL	test/HG01577.bam
+HG01817	HG01817	0	0	2	0	CDX	test/HG01817.bam
+PEL33	HG02002	0	0	1	0	PEL	test/HG02002.bam
+PEL48	HG02278	0	0	2	0	PEL	test/HG02278.bam
+NG68	HG03279	0	0	2	0	ESN	test/HG02278.bam
