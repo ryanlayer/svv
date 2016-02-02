@@ -1,19 +1,21 @@
 # SVView
 
-A simple tool that can help visualize the coverage near a variant across multiple BAMs.
+A two-step process that can help visualize the coverage near a variant across multiple BAMs.
 
-
-    $ gqt query -v -i target.vcf.gz -d target.ped.db \
-      -p "phenotype == 2" -g "HET HOM_ALT" \
-      -p "phenotype == 1" -g "HOM_REF" \
-    | bedtools intersect -u -header -wa -a stdin -b data/h37_ensemble_exons.bed.gz \
-    | bcftools view -i "SVTYPE=='DEL' && SVLEN>-500000" \
-    | ~/scratch/svv/sv_depth.py target.ped 10000
+    $ bcftools view test/test.vcf.gz | ./sv_depth.py test/test.ped 10000
     
-  This will create a covrage file named "var_ID.txt".
+`sv_depth.py` creates a covrage file for each SV named "var_ID.txt".  In this case it creates `var_DEL_pindel_18715.txt` and `var_UW_VH_5456.txt`.  The parameter to `sv_depth.py` modulates the distance up and down stream of the the SV.
+
+Visualize these coverages with `spark.py`, which takes an exome file, a map from transcrip to gene name, and an ouputfile.
   
-    $ cat var_1.txt | spark.py \
-      -e data/h37_ensemble_exons.bed.gz \
-      -n data/h37_ensemble_exons.togenename.txt \
-      -o var_1.png
-      
+    $ cat var_DEL_pindel_18715.txt \
+        | ./spark.py \
+            -e data/h37_ensemble_exons.bed.gz \
+            -n data/h37_ensemble_exons.togenename.txt \
+            -o var_DEL_pindel_18715.png
+
+    $ cat var_UW_VH_5456.txt \
+        | ./spark.py \
+            -e data/h37_ensemble_exons.bed.gz \
+            -n data/h37_ensemble_exons.togenename.txt \
+            -o var_UW_VH_5456.png
