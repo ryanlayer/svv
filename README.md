@@ -25,3 +25,22 @@ Step 2: Visualize these coverages with `spark.py`, which takes an exome file, a 
             -o var_UW_VH_5456.png
 
 ![var_UW_VH_5456.png](test/var_UW_VH_5456.png)
+
+```
+gqt query -i 15-0017322.15-0017321.15-0017320.15-0017319.15-0017318.15-0017317.15-0017316.15-0017315.x_btu356_LCR-hs37d5.MT.hs37d5.phix.bed.non_ref.IHH.vcf.gz -d ihh.ped.db -p "phenotype==2" -g "HET HOM_ALT" -p "phenotype==1" -g "HOM_REF" -v | bedtools intersect -header -a genes.bed -b stdin | sort -u
+1      	109296900      	109296900      	STXBP3
+1      	175091590      	175091645      	TNN
+13     	113499583      	113500053      	ATP11A
+15     	58850831       	58850831       	LIPC
+15     	78418614       	78423877       	CIB2
+2      	182443195      	182445136      	CERKL
+2      	189119618      	189120981      	LINC01090
+2      	196999182      	196999182      	STK17B
+3      	183876861      	183877361      	DVL3
+4      	124630701      	124630701      	LINC01091
+4      	187614520      	187614843      	FAT1
+7      	105160926      	105160926      	PUS7
+7      	105161909      	105161909      	PUS7
+7      	136834298      	136834750      	LOC349160
+8      	645443 	645708 	ERICH1
+```
